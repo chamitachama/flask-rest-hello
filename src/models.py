@@ -30,7 +30,7 @@ class User(db.Model):
 
 class Follower(db.Model):
     user_from_id: Mapped[int] = mapped_column(ForeignKey(
-        "user.id"), primary_key=True, autoincrement=True)
+        "user.id"), primary_key=True)
     user_to_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
 
     def serialize(self):
